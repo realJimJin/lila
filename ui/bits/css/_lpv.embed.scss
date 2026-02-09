@@ -5,6 +5,33 @@ body {
 .lpv {
   border-radius: 0;
   box-shadow: none;
+  height: 100dvh;
+
+  &--moves-bottom {
+    grid-template-columns: min(100vw, calc(100dvh - var(--controls-height) - 6em));
+    grid-template-rows: auto var(--controls-height) 1fr;
+  }
+
+  &--moves-auto {
+    @media (max-width: 450px) {
+      grid-template-columns: min(100vw, calc(100dvh - var(--controls-height) - 6em));
+      grid-template-rows: auto var(--controls-height) 1fr;
+    }
+  }
+
+  &--players {
+    &.lpv--moves-bottom {
+      grid-template-columns: min(100vw, calc(100dvh - 2 * 2em - var(--controls-height) - 6em));
+      grid-template-rows: 2em auto 2em var(--controls-height) 1fr;
+    }
+
+    &.lpv--moves-auto {
+      @media (max-width: 450px) {
+        grid-template-columns: min(100vw, calc(100dvh - 2 * 2em - var(--controls-height) - 6em));
+        grid-template-rows: 2em auto 2em var(--controls-height) 1fr;
+      }
+    }
+  }
 }
 .not-found {
   @extend %flex-center;
