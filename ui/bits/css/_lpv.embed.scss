@@ -33,6 +33,10 @@ body {
     }
   }
 }
+.lpv__pgn__text {
+  font-family: monospace;
+  font-size: 0.8em;
+}
 .not-found {
   @extend %flex-center;
 
